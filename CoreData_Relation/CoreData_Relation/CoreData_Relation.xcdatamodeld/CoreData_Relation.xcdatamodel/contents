@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Friends" representedClassName="Friends" syncable="YES" codeGenerationType="class">
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Persons" inverseName="friend" inverseEntity="Persons" syncable="YES"/>
+    </entity>
+    <entity name="Persons" representedClassName="Persons" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="friend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friends" inverseName="person" inverseEntity="Friends" syncable="YES"/>
+        <relationship name="phone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Phone" inverseName="person" inverseEntity="Phone" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Phone" representedClassName="Phone" syncable="YES" codeGenerationType="class">
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Persons" inverseName="phone" inverseEntity="Persons" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Friends" positionX="72" positionY="137" width="128" height="90"/>
+        <element name="Persons" positionX="-119" positionY="-0" width="128" height="105"/>
+        <element name="Phone" positionX="-288" positionY="144" width="128" height="90"/>
+        <element name="Users" positionX="-351" positionY="315" width="128" height="90"/>
+    </elements>
+</model>
